@@ -5,6 +5,10 @@ import numpy as np
 
 if __name__ == '__main__':
     fe = FeatureExtractor()
+    print(fe)
+
+    res =list(Path("./static/img").glob("*.jpg"))
+    print(res)
 
     for img_path in sorted(Path("./static/img").glob("*.jpg")):
         print(img_path)  # e.g., ./static/img/xxx.jpg
