@@ -1,59 +1,64 @@
-# Simple Image Search Engine
+<div align="right">
+  Language:
+    🇺🇸
+  <a title="Chinese" href="./README.zh-CN.md">🇨🇳</a>
+</div>
 
+<div align="center"><a title="" href="https://github.com/zjykzj/sis"><img align="center" src="./imgs/sis.png" alt=""></a></div>
 
-## [Demo](https://www.simple-image-search.xyz/)
-![](http://yusukematsui.me/project/sis/img/screencapture2.jpg)
+<p align="center">
+  «sis» provides a simple image search engine based on  Pytorch/Flask/Docker
+<br>
+<br>
+  <a href="https://github.com/RichardLitt/standard-readme"><img src="https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square" alt=""></a>
+  <a href="https://conventionalcommits.org"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg" alt=""></a>
+  <a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt=""></a>
+</p>
 
-## Workflow
-![](http://yusukematsui.me/project/sis/img/overview.png)
+## Table of Contents
 
-## News
-- [2020.06] Updated many parts of the code for [CVPR 2020 tutorial](https://matsui528.github.io/cvpr2020_tutorial_retrieval/)
+- [Table of Contents](#table-of-contents)
+- [Background](#background)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Maintainers](#maintainers)
+- [Thanks](#thanks)
+- [Contributing](#contributing)
+- [License](#license)
 
+## Background
 
-## Overview
-- Simple image-based image search engine using Keras + Flask. You can launch the search engine just by running two python scripts.
-- `offline.py`: This script extracts a deep-feature from each database image. Each feature is a 4096D fc6 activation from a VGG16 model with ImageNet pre-trained weights.
-- `server.py`: This script runs a web-server. You can send your query image to the server via a Flask web-interface. The server finds similar images to the query by a simple linear scan.
-- GPUs are not required.
-- Tested on Ubuntu 18.04 and WSL2 (Ubuntu 20.04)
+This warehouse is developed based on [matsui528/sis](https://github.com/matsui528/sis), provides image retrieval function based on pytorch, and provides more stable functions combined with flask+docker.
 
-## Links
-- [Demo](https://www.simple-image-search.xyz/)
-- [Course at CVPR2020](https://matsui528.github.io/cvpr2020_tutorial_retrieval/) [[slides](https://speakerdeck.com/matsui_528/cvpr20-tutorial-live-coding-demo-to-implement-an-image-search-engine-from-scratch)] [[video](https://www.youtube.com/watch?v=M0Y9_vBmYXU)]
-- [Project page](http://yusukematsui.me/project/sis/sis.html)
-- [Tutorial](https://ourcodeworld.com/articles/read/981/how-to-implement-an-image-search-engine-using-keras-tensorflow-with-python-3-in-ubuntu-18-04) and [Video](https://www.youtube.com/watch?v=Htu7b8PUyRg) by [@sdkcarlos](https://github.com/sdkcarlos)
+## Installation
+
+...
 
 ## Usage
-```bash
-git clone https://github.com/matsui528/sis.git
-cd sis
-pip install -r requirements.txt
 
-# Put your image files (*.jpg) on static/img
+...
 
-# Then fc6 features are extracted and saved on static/feature
-# Note that it takes time for the first time because Keras downloads the VGG weights.
-python offline.py
+## Maintainers
 
-# Now you can do the search via localhost:5000
-python server.py
-```
+* Yusuke Matsui - *Initial work* - [matsui528](https://github.com/matsui528)
+* zhujian - *Enhanced work* - [zjykzj](https://github.com/zjykzj)
 
-## Advanced: Launch on AWS
-- You can easily launch the search engine server on AWS EC2. Please first open the port 5000 and launch an EC2 instance. Note that you need to create a security group such that the port 5000 is opened.
-- A middle-level CPU instance is sufficient, e.g., m5.large.
-- After you log-in to the instance by ssh, please setup the python environment (e.g., by [anaconda](https://docs.anaconda.com/anaconda/install/linux/)).
-- Run `offline.py` and `server.py`.
-- After you run `python server.py`, you can access the server from your browser via something like `http://ec2-XX-XX-XXX-XXX.us-west-2.compute.amazonaws.com:5000`
-- (Advanced) If you'd like to deploy the system in a secure way, please consider running the search engine with the usual web server, e.g., uWSGI + nginx.
-- (Advanced) If you want to deploy the system serverlessly, [AWS AppRunner](https://docs.aws.amazon.com/apprunner/latest/dg/what-is-apprunner.html) is the way to go.
+## Thanks
 
+* [matsui528/sis](https://github.com/matsui528/sis)
 
-## Citation
+## Contributing
 
-    @misc{sis,
-	    author = {Yusuke Matsui},
-	    title = {Simple Image Search Engine},
-	    howpublished = {\url{https://github.com/matsui528/sis}}
-    }
+Anyone's participation is welcome! Open an [issue](https://github.com/matsui528/sis/issues) or submit PRs.
+
+Small note:
+
+* Git submission specifications should be complied
+  with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/)
+* If versioned, please conform to the [Semantic Versioning 2.0.0](https://semver.org) specification
+* If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme)
+  specification.
+
+## License
+
+[Apache License 2.0](LICENSE) © 2022 zjykzj
