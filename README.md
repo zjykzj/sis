@@ -32,6 +32,8 @@ This warehouse is developed based on [matsui528/sis](https://github.com/matsui52
 
 ## Installation
 
+### Local deployment
+
 ```shell
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
@@ -50,6 +52,20 @@ python offline.py
 ```shell
 gunicorn server:app -c gunicorn.conf.py
 ``` 
+
+### Container deployment
+
+* First, build an image
+
+```shell
+docker build -t sis:0.1.0 .
+```
+
+* Second, run it
+
+```shell
+bash bash_docker.sh
+```
 
 ## Maintainers
 
