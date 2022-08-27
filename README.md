@@ -32,13 +32,13 @@ This warehouse is developed based on [matsui528/sis](https://github.com/matsui52
 
 ## Installation
 
-### Local deployment
-
 ```shell
 pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
 ## Usage
+
+### Local deployment
 
 * First, you should put gallery images to `./static/img`
 * Then, extract features using `offline.py`
