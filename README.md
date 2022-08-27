@@ -32,11 +32,24 @@ This warehouse is developed based on [matsui528/sis](https://github.com/matsui52
 
 ## Installation
 
-...
+```shell
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
 
 ## Usage
 
-...
+* First, you should put gallery images to `./static/img`
+* Then, extract features using `offline.py`
+
+```shell
+python offline.py
+```
+
+* Finally, launch flask app like this:
+
+```shell
+gunicorn server:app -c gunicorn.conf.py
+``` 
 
 ## Maintainers
 
@@ -46,6 +59,7 @@ This warehouse is developed based on [matsui528/sis](https://github.com/matsui52
 ## Thanks
 
 * [matsui528/sis](https://github.com/matsui528/sis)
+* [Flask + Docker 无脑部署新手教程](https://zhuanlan.zhihu.com/p/78432719)
 
 ## Contributing
 
