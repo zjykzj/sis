@@ -2,10 +2,12 @@
 
 import os
 
-from PIL import Image
-from feature_extractor import FeatureExtractor
-from pathlib import Path
 import numpy as np
+from PIL import Image
+from pathlib import Path
+from tqdm import tqdm
+
+from feature_extractor import FeatureExtractor
 
 IMG_SUFFIX = '.jpg'
 FEATURE_SUFFIX = '.npy'
@@ -28,7 +30,7 @@ def main():
     src_root = "static/img"
     dst_root = 'static/feature'
 
-    for item in list(Path(src_root).rglob('*.jpg')):
+    for item in tqdm(list(Path(src_root).rglob('*.jpg'))):
         img_path = str(item)
         img = Image.open(img_path)
 
