@@ -49,6 +49,7 @@ class Search:
     def __init__(self):
         self.fe = FeatureExtractor()
         self.features, self.img_paths = init()
+        logger.info(f"features: {self.features.shape}")
 
     def run(self, img: Image):
         # Run search
