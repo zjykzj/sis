@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import torchvision.transforms as transforms
-from torchvision.models import resnet18
+from torchvision.models import resnet18, ResNet18_Weights
 
 import numpy as np
 from PIL import Image
@@ -9,7 +9,7 @@ from PIL import Image
 
 class FeatureExtractor:
     def __init__(self):
-        self.model = resnet18(pretrained=True)
+        self.model = resnet18(weights=ResNet18_Weights.IMAGENET1K_V1)
         self.model.eval()
         self.transform = transforms.Compose([
             # take a 224x224 img as an input
