@@ -35,6 +35,8 @@ def main():
         img = Image.open(img_path)
 
         feature = fe.extract(img)
+        if len(feature.shape) != 1:
+            feature = feature.reshape(-1)
 
         save_feature(img_path, src_root, dst_root, feature)
 
